@@ -1,0 +1,24 @@
+{
+  "name": "webpackwizard",
+  "version": "1.0.0",
+  "description": "Webpack Config Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WebPack",
+    "CLI"
+  ],
+  "author": "Donald Blanc, Tyler Sayles, Joel Rivera, David Kim ",
+  "license": "MIT",
+  "bin": {
+    "ginit": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.3.1"
+  }
+}
