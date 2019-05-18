@@ -56,8 +56,8 @@ npm install --save-dev file-loader
 const moduleLoaders = {
   // Babel - ES6+
   Babel: {
-    test: /\.js$/,
-    exclude: /(node_modules|bower_components)/,
+    test: '!/.js$/!',
+    exclude: '!/(node_modules|bower_components)/!',
     use: {
       loader: ['babel-loader', 'jshint-loader'],
       options: {
@@ -67,8 +67,8 @@ const moduleLoaders = {
   },
   // React JSX
   React: {
-    test: /.(js|jsx)$/,
-    exclude: /node_modules/,
+    test: "!/.(js|jsx)$/!",
+    exclude: "!/node_modules/!",
     use: {
       loader: 'babel-loader',
       query: {
@@ -78,14 +78,14 @@ const moduleLoaders = {
   },
   // CoffeeScript
   CoffeeScript: {
-    test: /\.coffee$/,
-    exclude: /node_modules/,
+    test: "!/\.coffee$/!",
+    exclude: "!/node_modules/!",
     use: 'coffee-loader'
   },
   // TypeScript
   TypeScript: {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
+    test: "!/\.tsx?$/!",
+    exclude: "!/node_modules/!",
     use: {
       loader: 'ts-loader',
       options: {
@@ -95,29 +95,29 @@ const moduleLoaders = {
   },
   // Vue
   Vue: {
-    test: /\.vue$/,
-    exclude: /node_modules/,
+    test: "!/\.vue$/!",
+    exclude: "!/node_modules/!",
     use: 'vue-loader'
   },
   // Polymer
   Polymer: {
-    test: /\.html$/,
-    exclude: /node_modules/,
+    test: "!/\.html$/!",
+    exclude: "!/node_modules/!",
     use: ['babel-loader', 'polymer-webpack-loader']
   },
   // CSS
   CSS: {
-    test: /\.css$/,
+    test: "!/.css$/!",
     use: ['style-loader', 'css-loader']
   },
   // LESS
   LESS: {
-    test: /\.less$/,
+    test: "!/.less$/!",
     use: ['style-loader', 'css-loader', 'less-loader']
   },
   // SCSS
   SCSS: {
-    test: /\.scss$/,
+    test: "!/\.scss$/!",
     use: ['style-loader', 'css-loader', 'sass-loader']
   },
   // POSTCSS
@@ -142,36 +142,36 @@ const moduleLoaders = {
   // },
   // stylus
   STYLUS: {
-    test: /\.styl$/,
+    test: "!/\.styl$/!",
     use: ['style-loader', 'css-loader', 'stylus-loader']
   },
 
   // ESLint
   ESLint: {
     enforce: 'pre',
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
+    test: "!/\.(js|jsx)$/!",
+    exclude: "!/node_modules/!",
     use: 'eslint-loader'
   },
   // JShint
   JShint: {
     enforce: 'pre',
-    test: /\.(js|jsx)$/,
+    test: "!/\.(js|jsx)$/!",
     exclude: /node_modules/,
     use: 'jshint-loader'
   },
   // Images
   Image: {
-    test: /\.(png|svg|jpg|gif)$/,
+    test: "!/\.(png|svg|jpg|gif)$/!",
     use: ['file-loader']
   },
   //
   Fonts: {
-    test: /\.(woff|woff2|eot|ttf|otf)$/,
+    test: "!/\.(woff|woff2|eot|ttf|otf)$/!",
     use: ['file-loader']
   },
   XML: {
-    test: /\.xml$/,
+    test: "!/\.xml$/!",
     use: ['xml-loader']
   }
 };
