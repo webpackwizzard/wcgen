@@ -41,13 +41,11 @@ const getPackageManager = () => {
     }
 }
 
-const getPathToLocalPackages = () => {
+const getLocalPath = () => {
     const manager = getPackageManager();
     if (manager === "yarn") {
         try {
-            let yarnDir = spawn("yarn", ["dir"])
-                .stdout.toString()
-                .trim();
+            let yarnDir = spawn("yarn", ["dir"]).stdout.toString().trim();
             return path.join(yarnDir, "node_modules");
         }
         catch (e) { console.error(e) }
@@ -55,8 +53,8 @@ const getPathToLocalPackages = () => {
     return spawn("npm", ["root"])
 }
 
-const spawnChild = (pkg) => {
-    const localPath = getPathToLocalPackages();
+const spawnInstaller = (pkg) => {
+    const localPath = getLocalPath();
     const pkgPath = path.resolve(localPath, pkg);
     const packageManager = getPackageManager();
     const isNew = !fs.existsSync(pkgPath);
@@ -65,4 +63,4 @@ const spawnChild = (pkg) => {
 }
 
 // const pkgsToInstall = scaffold.getAnswers()
-// pkgsToInstall.forEach(p => spawnChild(p))
+// pkgsToInstall.forEach(p => spawnInstaller(p))
