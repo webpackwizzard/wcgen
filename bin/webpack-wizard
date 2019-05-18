@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+// entry point / naming convention for CLI utils
+const cli = require('../src/cli')
+
+cli.init()
