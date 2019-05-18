@@ -61,7 +61,6 @@ typings/
 .next
 
 node_modules
-lib
 .DS_Store
 node_modules/
 .vscode
