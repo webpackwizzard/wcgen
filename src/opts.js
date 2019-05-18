@@ -4,7 +4,7 @@ module.exports = options = [
     message: 'select CSS preprocessor',
     name: 'cssPreprocessor',
     choices: [
-      "SASS", "LESS", "POSTCSS"
+      "SASS", "LESS", "POSTCSS", "Sylus"
     ]
   },
   {
