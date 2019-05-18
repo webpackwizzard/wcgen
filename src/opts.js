@@ -1,8 +1,9 @@
 module.exports = options = [
   {
     type: 'checkbox',
-    name: 'LESS',
-    choices: [
+    name: 'LESS { installs: less-/style-/css-loaders }',
+    choices: ["yes", "no"], //  need to define a query syntax
+    dependencies: [
       "less-loader",
       "less",
       "style-loader",
