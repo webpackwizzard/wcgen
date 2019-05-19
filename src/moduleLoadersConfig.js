@@ -107,12 +107,12 @@ const moduleLoaders = {
   },
   // CSS
   CSS: {
-    test: "!/.css$/!",
+    test: "!/\.css$/!",
     use: ['style-loader', 'css-loader']
   },
   // LESS
   LESS: {
-    test: "!/.less$/!",
+    test: "!/\.less$/!",
     use: ['style-loader', 'css-loader', 'less-loader']
   },
   // SCSS
