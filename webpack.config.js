@@ -7,6 +7,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react"
+            ]
+          }
+        }
+      },
+      {
         test: /\.scss$/,
         use: [
           "style-loader",
@@ -28,7 +41,22 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          "file-loader"
+        ]
       }
     ]
+  },
+  resolve: {
+    extensions: [
+      ".js",
+      ".jsx"
+    ]
+  },
+  devServer: {
+    contentBase: "./dist"
   }
 }
