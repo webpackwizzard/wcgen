@@ -1,4 +1,5 @@
-module.exports = {
+const path = require('path'); 
+  module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -7,38 +8,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        use: "vue-loader"
+      },
+      {
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-          query: {
-            presets: [
-              "@babel/preset-env",
-              "@babel/preset-react"
-            ]
-          }
-        }
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader"
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: [
-            "babel-loader",
-            "jshint-loader"
-          ],
+          loader: "ts-loader",
           options: {
-            presets: [
-              "env"
-            ]
+            transpileOnly: true
           }
         }
       },
@@ -48,12 +28,6 @@ module.exports = {
           "file-loader"
         ]
       }
-    ]
-  },
-  resolve: {
-    extensions: [
-      ".js",
-      ".jsx"
     ]
   },
   devServer: {

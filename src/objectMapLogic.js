@@ -39,7 +39,8 @@ generateWebpackConfig.make = (answers) => {
 
   //console.log('this is the sample', sample)
 
-  fs.writeFile('webpack.config.js', 'module.exports = ', err => {
+  fs.writeFile('webpack.config.js', `const path = require('path'); 
+  module.exports = `, err => {
     if (err) throw err;
   });
 
