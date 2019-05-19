@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.scss$/,
+        test: /\.scss$/,
         use: [
           "style-loader",
           "css-loader",
@@ -15,7 +15,7 @@ module.exports = {
         ]
       },
       {
-        test: /.js$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: [

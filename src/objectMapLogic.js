@@ -33,6 +33,7 @@ generateWebpackConfig.make = (answers) => {
   fs.appendFile(
     'webpack.config.js',
     JSON.stringify(sample, null, 2)
+      .replace(/(?:\/\.)/g,'\/\\.')
       .replace(/"CODE:/g, '')
       .replace(/\)"/g, ')')
       .replace(/\!"/g, '')
