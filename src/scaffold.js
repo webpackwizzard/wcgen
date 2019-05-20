@@ -12,5 +12,5 @@ scaffold.beginPrompting = () => {
       generateWebpackConfig.make(Object.values(answers))
     })
 }
-
+// test
 module.exports = scaffold
