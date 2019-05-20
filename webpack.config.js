@@ -13,11 +13,11 @@ const path = require('path');
         use: "vue-loader"
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         use: [
           "style-loader",
           "css-loader",
-          "less-loader"
+          "sass-loader"
         ]
       },
       {

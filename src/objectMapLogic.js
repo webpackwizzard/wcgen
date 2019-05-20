@@ -36,6 +36,16 @@ generateWebpackConfig.make = (answers) => {
           '.jsx'
         ]
       }
+      // generate a babelrc file
+      fs.writeFile(
+        '.babelrc',
+        `{
+  presets: [“@babel/preset-env”, “@babel/preset-react”]
+}`,
+        err => {
+          if (err) throw err;
+        })
+
     }
 
   });
