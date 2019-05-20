@@ -8,9 +8,17 @@ const path = require('path');
   module: {
     rules: [
       {
-        test: /\.vue$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "vue-loader"
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react"
+            ]
+          }
+        }
       },
       {
         test: /\.scss$/,
@@ -21,12 +29,17 @@ const path = require('path');
         ]
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "ts-loader",
+          loader: [
+            "babel-loader",
+            "jshint-loader"
+          ],
           options: {
-            transpileOnly: true
+            presets: [
+              "env"
+            ]
           }
         }
       },
@@ -36,6 +49,12 @@ const path = require('path');
           "file-loader"
         ]
       }
+    ]
+  },
+  resolve: {
+    extensions: [
+      ".js",
+      ".jsx"
     ]
   },
   devServer: {

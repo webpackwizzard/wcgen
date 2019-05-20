@@ -1,6 +1,6 @@
 {
   "name": "wpwzrd",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "Webpack Config Generator",
   "main": "./bin/webpack-wizard",
   "scripts": {
@@ -12,9 +12,6 @@
   ],
   "author": "Donald Blanc, Tyler Sayles, Joel Rivera, David Kim ",
   "license": "MIT",
-  "bin": {
-    "ginit": "./bin/webpack-wizard"
-  },
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
