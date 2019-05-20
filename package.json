@@ -1,8 +1,8 @@
 {
-  "name": "webpackwizard",
-  "version": "1.0.0",
+  "name": "wpwzrd",
+  "version": "1.0.7",
   "description": "Webpack Config Generator",
-  "main": "index.js",
+  "main": "./bin/webpack-wizard",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +12,6 @@
   ],
   "author": "Donald Blanc, Tyler Sayles, Joel Rivera, David Kim ",
   "license": "MIT",
-  "bin": {
-    "ginit": "./index.js"
-  },
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
