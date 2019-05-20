@@ -1,5 +1,8 @@
 const path = require('path'); 
-  module.exports =  path.resolve(__dirname, 'dist'),
+  module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
   },
   module: {
@@ -18,11 +21,11 @@ const path = require('path');
         }
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         use: [
           "style-loader",
           "css-loader",
-          "less-loader"
+          "sass-loader"
         ]
       },
       {
