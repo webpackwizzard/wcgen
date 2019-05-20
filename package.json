@@ -2,7 +2,7 @@
   "name": "wpwzrd",
   "version": "1.0.0",
   "description": "Webpack Config Generator",
-  "main": "index.js",
+  "main": "./bin/webpack-wizard",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
