@@ -1,474 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
-    <style>
-     .title {
-       font-family: 'Lobster';
-       font-size: 50px;
-     }
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+  <style>
+    .title {
+      font-family: 'Lobster';
+      font-size: 50px;
+    }
 
-html, body {
-  margin: 0px;
-  height: 100%;
-}
+    *,
+    *:after,
+    *:before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
 
-pre {
-  width: 100%;
-  line-height: 1.6;
-  background-color: #fffdae;
-  padding: 1em 1em 1em 1em;
-  border-left: solid 3px #3C6991;
-  margin-right: -1em;
-  overflow-x: auto;
-}
+    html,
+    body {
+      margin: 0px;
+      height: 100%;
+    }
 
-.string {
-  color: #3C6991;
-}
+    pre {
+      width: 100%;
+      line-height: 1.6;
+      background-color: #fffdae;
+      padding: 1em 1em 1em 1em;
+      border-left: solid 3px #3C6991;
+      margin-right: -1em;
+      overflow-x: auto;
+    }
 
-.gold, .yellow, .blue {
-  padding: .2em;
-  margin: none;
-  font-family: monospace;
-}
+    .string {
+      color: #3C6991;
+    }
 
-.gold {
-  color: #ffffaa;
-}
+    .gold,
+    .yellow,
+    .blue {
+      padding: .2em;
+      margin: none;
+      font-family: monospace;
+    }
 
-.yellow {
-  color: #e6b35a;
-}
+    .gold {
+      color: #ffffaa;
+    }
 
-.lightblue {
-  color: #9Cc9f1;
-}
+    .yellow {
+      color: #e6b35a;
+    }
 
-.blue {
-  color: #4C6991;
-}
+    .lightblue {
+      color: #9Cc9f1;
+    }
 
-.content .quote {
-  padding-bottom: 40px;
-}
+    .blue {
+      color: #4C6991;
+    }
 
-.content blockquote {
-  text-align: left;
-}
+    .content .quote {
+      padding-bottom: 40px;
+    }
 
-.attrib {
-  display: block;
-  text-align: left;
-  max-width: 550px;
-  font-size: 16px;
-  font-style: normal;
-  margin-top: 10px;
-}
+    .content blockquote {
+      text-align: left;
+    }
 
-.filename {
-  text-align: right;
-  font-size: 14px;
-  margin: auto;
-  margin-bottom: -4px;
-  margin-top: -15px;
-}
+    .attrib {
+      display: block;
+      text-align: left;
+      max-width: 550px;
+      font-size: 16px;
+      font-style: normal;
+      margin-top: 10px;
+    }
 
-body {
-  text-decoration: none;
-  font-family: "Lobster",sans-serif;
-  font-style: normal;
-  font-weight: 300;
-}
+    .filename {
+      text-align: right;
+      font-size: 14px;
+      margin: auto;
+      margin-bottom: -4px;
+      margin-top: -15px;
+    }
 
-body {
-  overflow-x: hidden;
-}
+    body {
+      text-decoration: none;
+      font-family: "Lobster", sans-serif;
+      font-style: normal;
+      font-weight: 300;
+    }
 
-em {
-  font-family: "Lobster",sans-serif;
-  font-style: italic;
-  font-weight: 500;
-}
-header, h1 {
-  text-align: center;
-  font-family: "Lobster", georgia,serif;
-  font-style: normal;
-  font-weight: 400;
-}
-h1, h2, h3, h4, h5 {
-  margin: 0;
-  font-weight: normal;
-}
-h2 {
-  font-family: "Lobster", georgia,serif;
-  font-weight: 400;
-}
-.subtitle {
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-}
-.content h2 {
-  font-style: normal;
-  text-align: center;
-}
+    body {
+      overflow-x: hidden;
+    }
 
-div, p, blockquote, button {
-  margin: 0;
-}
+    em {
+      font-family: "Lobster", sans-serif;
+      font-style: italic;
+      font-weight: 500;
+    }
 
-#footer .content {
-  color: white;
-  padding: 20px;
-  font-size: 14px;
-  overflow: hidden;
-}
-#banner { text-align: center; }
-#footer a { color: #e6b35a; }
+    header,
+    h1 {
+      text-align: center;
+      font-family: "Lobster", georgia, serif;
+      font-style: normal;
+      font-weight: 400;
+    }
 
-@media only screen and (max-width: 548px) {
-  #banner-img {
-    width: 100%;
-  }
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 0;
+      font-weight: normal;
+    }
 
-blockquote {
-  font-family: "Lobster", georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.2em;
-  line-height: 1.6em;
-  padding: 36px;
-  border: solid 8px #e6b35a;
-  font-style: italic;
-}
+    h2 {
+      font-family: "Lobster", georgia, serif;
+      font-weight: 400;
+    }
 
-ul, ol, li {
-  margin: 14px 0;
-}
+    .subtitle {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
 
-small {
-  font-size: .6em;
-}
+    .content h2 {
+      font-style: normal;
+      text-align: center;
+    }
 
-button {
-  padding: .2em .5em .2em .6em;
-  outline: none;
-  box-shadow: none;
-  background: none;
-  border: 2px solid;
-  font-family: "Lobster", georgia, serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 5px;
-}
+    div,
+    p,
+    blockquote,
+    button {
+      margin: 0;
+    }
 
-.trans {
-  -webkit-transition: -webkit-transform .3s;
-  -moz-transition:    -moz-transform .3s;
-  transition:         transform .3s;
-}
+    #footer .content {
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+      overflow: hidden;
+    }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    #banner {
+      text-align: center;
+    }
 
-p a {
-  font-weight: inherit;
-}
+    #footer a {
+      color: #e6b35a;
+    }
 
-article { overflow: hidden; }
+    @media only screen and (max-width: 548px) {
+      #banner-img {
+        width: 100%;
+      }
+    }
 
-.articles h2 { font-size: 40px; }
-.articles section { padding: 50px; }
-.articles #middle-section, .articles #bottom-section { padding: 50px 0; }
+    blockquote {
+      font-family: "Lobster", georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      padding: 36px;
+      border: solid 8px #e6b35a;
+      font-style: italic;
+    }
 
-#install a { color: white;}
-#install .code {
-  background: #111;
-  box-shadow: 0 0 10px #08c, inset 0 0 10px #000;
-  border: 0;
-  border-radius: 9px;
-  color: #fff !important;
-}
+    ul,
+    ol,
+    li {
+      margin: 14px 0;
+    }
 
-.entry-content a, .content a { color: #3C6991;}
-.review-section a { color: #e6b35a;}
+    small {
+      font-size: .6em;
+    }
 
-.entry-content h2 {
-  margin: 1em 0 15px;
-  padding: 0;
-  font-weight: bold;
-  line-height: 1.7;
-  cursor: text;
-  position: relative;
-  text-align: left;
-}
+    button {
+      padding: .2em .5em .2em .6em;
+      outline: none;
+      box-shadow: none;
+      background: none;
+      border: 2px solid;
+      font-family: "Lobster", georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 5px;
+    }
 
-.entry-content h3 {
-  margin: 1em 0 15px;
-  padding: 0;
-  font-weight: bold;
-  line-height: 1.7;
-  cursor: text;
-  position: relative;
-}
+    .trans {
+      -webkit-transition: -webkit-transform .3s;
+      -moz-transition: -moz-transform .3s;
+      transition: transform .3s;
+    }
 
-/* Color Schemes
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p a {
+      font-weight: inherit;
+    }
+
+    article {
+      overflow: hidden;
+    }
+
+    .articles h2 {
+      font-size: 40px;
+    }
+
+    .articles section {
+      padding: 50px;
+    }
+
+    .articles #middle-section,
+    .articles #bottom-section {
+      padding: 50px 0;
+    }
+
+    #install a {
+      color: white;
+    }
+
+    #install .code {
+      background: #111;
+      box-shadow: 0 0 10px #08c, inset 0 0 10px #000;
+      border: 0;
+      border-radius: 9px;
+      color: #fff !important;
+    }
+
+    .entry-content a,
+    .content a {
+      color: #3C6991;
+    }
+
+    .review-section a {
+      color: #e6b35a;
+    }
+
+    .entry-content h2 {
+      margin: 1em 0 15px;
+      padding: 0;
+      font-weight: bold;
+      line-height: 1.7;
+      cursor: text;
+      position: relative;
+      text-align: left;
+    }
+
+    .entry-content h3 {
+      margin: 1em 0 15px;
+      padding: 0;
+      font-weight: bold;
+      line-height: 1.7;
+      cursor: text;
+      position: relative;
+    }
+
+    /* Color Schemes
    ============================================================= */
 
-button {
-  color: #3C6991;
-  background-color: #f0f0f0;
-  margin-right: 10px;
-}
+    button {
+      color: #3C6991;
+      background-color: #f0f0f0;
+      margin-right: 10px;
+    }
 
-button.transparent {
-  background-color: transparent;
-}
+    button.transparent {
+      background-color: transparent;
+    }
 
-button:hover, button.transparent:hover {
-  border-color: #3C6991;
-  background-color: #3C6991 !important;
-  color: #F2F4FF;
-}
+    button:hover,
+    button.transparent:hover {
+      border-color: #3C6991;
+      background-color: #3C6991 !important;
+      color: #F2F4FF;
+    }
 
-.badge g {
-  fill: #6f019e;
-}
+    .badge g {
+      fill: #6f019e;
+    }
 
-.color-d {
-  color: #e6b35a;
-}
+    .color-d {
+      color: #e6b35a;
+    }
 
-.color-a {
-  background-color: #f0f0f0;
-  color: #3C6991;
-}
+    .color-a {
+      background-color: #f0f0f0;
+      color: #3C6991;
+    }
 
 
-.color-c {
-  background-color: #222;
-  color: #F2F4FF;
-}
+    .color-c {
+      background-color: #222;
+      color: #F2F4FF;
+    }
 
-#top-home-section {
-  text-align: center;
-  overflow: auto;
-}
-#top-home-image {
-  width: 200px; height: 150px;
-  background-image: url('images/wizard_hat_blue.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 20px auto 0 auto;
-}
-#top-home-section > a:last-of-type button {
-  margin-right: 0;
-}
+    #top-home-section {
+      text-align: center;
+      overflow: auto;
+    }
 
-h1, h2, h3, p, div { padding: 0 5px; }
+    #top-home-image {
+      width: 200px;
+      height: 150px;
+      background-image: url('images/wizard_hat_blue.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 20px auto 0 auto;
+    }
 
-#top-title {
-  font-size: 50px;
-  margin-top: -20px;
-  margin-bottom: -10px;
-}
-#top-title img {
-  width: 300px;
-  max-width: 100%;
-}
-#top-subtitle {
-  font-size: 16px;
-  line-height: 24px;
-  max-width: 720px;
-  padding: 0 20px 30px 20px;
-  margin: 0 auto;
-}
-#top-nav {
-  padding: 0 20px;
-}
-.top-button { font-size: 14px; }
-h1 { font-size: 30px; }
+    #top-home-section>a:last-of-type button {
+      margin-right: 0;
+    }
 
-.community { margin: 20px; }
-#bottom-section, .review-section { padding: 30px 0; }
-#middle-section h1 { margin-bottom: 15px; padding: 20px 0 10px 0; }
-#middle-section h3 { padding: 10px 0; font-size: 25px; text-align: center; }
-#bottom-section .code { color: black; }
+    h1,
+    h2,
+    h3,
+    p,
+    div {
+      padding: 0 5px;
+    }
 
-#middle-section { padding: 20px 0; }
-section { padding: 0 0 30px 0; }
+    #top-title {
+      font-size: 50px;
+      margin-top: -20px;
+      margin-bottom: -10px;
+    }
 
-.content {
-  font-size: 14px;
-  max-width: 450px;
-  margin: 0 auto;
-  line-height: 20px;
-}
+    #top-title img {
+      width: 300px;
+      max-width: 100%;
+    }
 
-.content blockquote {
-  background-color: #fffdae;
-}
+    #top-subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 720px;
+      padding: 0 20px 30px 20px;
+      margin: 0 auto;
+    }
 
-pre { font-size: 14px; }
-iframe { width: 450px; }
+    #top-nav {
+      padding: 0 20px;
+    }
 
-.content p { margin: 15px 0; }
+    .top-button {
+      font-size: 14px;
+    }
 
-a:hover, button:hover { cursor: pointer; cursor: hand;}
+    h1 {
+      font-size: 30px;
+    }
 
-.content iframe {
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-}
+    .community {
+      margin: 20px;
+    }
 
-.badge img { width: 200px;}
+    #bottom-section,
+    .review-section {
+      padding: 30px 0;
+    }
 
-.content hr {
-  margin-bottom: 15px;
-}
+    #middle-section h1 {
+      margin-bottom: 15px;
+      padding: 20px 0 10px 0;
+    }
 
-.title { margin-bottom: 10px; }
-.subtitle { margin-bottom: 20px; }
+    #middle-section h3 {
+      padding: 10px 0;
+      font-size: 25px;
+      text-align: center;
+    }
 
-#sponsor {
-  padding: 0;
-  margin: 0;
-}
-.tidelift-banner {
-  background-color: #626980;
-  color: #ffffff;
-  font: 14px "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  padding: 6px 10px;
-  display: inline-block;
-  width: 100%;
-}
-.tidelift-banner img {
-  display: inline-block;
-  height: 1.428em;
-  width: 1.428em;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-  @media (min-width: 900px) {
+    #bottom-section .code {
+      color: black;
+    }
+
+    #middle-section {
+      padding: 20px 0;
+    }
+
+    section {
+      padding: 0 0 30px 0;
+    }
+
+    .content {
+      font-size: 14px;
+      max-width: 450px;
+      margin: 0 auto;
+      line-height: 20px;
+    }
+
+    .content blockquote {
+      background-color: #fffdae;
+    }
+
+    pre {
+      font-size: 14px;
+    }
+
+    iframe {
+      width: 450px;
+    }
+
+    .content p {
+      margin: 15px 0;
+    }
+
+    a:hover,
+    button:hover {
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    .content iframe {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .badge img {
+      width: 200px;
+    }
+
+    .content hr {
+      margin-bottom: 15px;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      margin-bottom: 20px;
+    }
+
     #sponsor {
-      position: absolute;
-      top: 16px;
-      right: 0;
+      padding: 0;
+      margin: 0;
     }
-    .tidelift-banner { width: auto; }
-  }
 
-  #bottom-section header, #bottom-section .step {
-    text-shadow: 0px 0px 30px #673AB7, 0px 0px 30px #673AB7,0px 0px 30px #673AB7;
-  }
+    .tidelift-banner {
+      background-color: #626980;
+      color: #ffffff;
+      font: 14px "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      padding: 6px 10px;
+      display: inline-block;
+      width: 100%;
+    }
 
-  #bottom-section {
-    background-image: url(images/wizard.png);
-    background-repeat: no-repeat;
-    background-position: bottom 30px center;
-    background-size: 150px;
-    padding-bottom: 230px;
-  }
+    .tidelift-banner img {
+      display: inline-block;
+      height: 1.428em;
+      width: 1.428em;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
 
-  @media only screen and (min-width : 900px) {
+    @media (min-width: 900px) {
+      #sponsor {
+        position: absolute;
+        top: 16px;
+        right: 0;
+      }
+
+      .tidelift-banner {
+        width: auto;
+      }
+    }
+
+    #bottom-section header,
+    #bottom-section .step {
+      text-shadow: 0px 0px 30px #673AB7, 0px 0px 30px #673AB7, 0px 0px 30px #673AB7;
+    }
+
     #bottom-section {
-      background-position: 20px 20px;
-      padding-bottom: 30px;
+      background-image: url(images/wizard.png);
+      background-repeat: no-repeat;
+      background-position: bottom 30px center;
+      background-size: 150px;
+      padding-bottom: 230px;
     }
-  }
 
-  @media only screen and (min-height : 500px) {
-    h1 { font-size: 40px; }
-    #top-home-image { height: 250px; }
-    #top-title { padding-bottom: 15px; font-size: 65px; margin-top: -80px;}
-    #top-title img { width: 450px; }
-    #top-subtitle { font-size: 20px; line-height: 24px; padding-bottom: 30px; }
-    .top-button { font-size: 18px; }
-    section { padding: 0 0 70px 0; }
-    #bottom-section { background-size: 225px; }
-    #bottom-section, .review-section { padding: 60px 0; }
-    #middle-section { padding: 30px 0; }
-    #middle-section h1 { padding: 35px 0 15px 0; }
-    #middle-section h3 { padding: 20px 0; font-size: 30px; }
-    pre { font-size: 16px; }
-    .content { font-size: 16px; line-height: 24px; max-width: 600px; }
-    .content p { margin-top: 25px; }
-    .content iframe, .content hr { margin-bottom: 25px; }
-    iframe { width: 600px; }
-    .title { margin-bottom: 20px; }
-    .subtitle { margin-bottom: 30px; }
-    .community { margin: 30px; }
-    .badge img { width: 300px;}
-  }
+    @media only screen and (min-width : 900px) {
+      #bottom-section {
+        background-position: 20px 20px;
+        padding-bottom: 30px;
+      }
+    }
 
-  @media only screen and (min-height : 750px) {
-    button { border: 5px solid;}
-    h1 { font-size: 50px; }
-    #top-home-image { height: 350px; width: 300px; }
-    #top-title { padding-bottom: 30px; font-size: 84.5px; margin-top: -80px; }
-    #top-title img { width: 650px; }
-    #top-subtitle { font-size: 24px; line-height: 36px; padding-bottom: 30px; }
-    .top-button { font-size: 22px; }
-    section { padding: 0 0 100px 0; }
-    #bottom-section { background-size: 300px; background-position: 20px 40px; }
-    #bottom-section, .review-section { padding: 100px 0; }
-    #middle-section { padding: 50px 0; }
-    #middle-section h1 { padding: 50px 0 20px 0; }
-    #middle-section h3 { padding: 30px 0; font-size: 45px; }
-    .content { font-size: 20px; line-height: 30px; max-width: 720px; }
-    iframe { width: 720px; }
-    pre { font-size: 20px; }
-    .content p { margin-top: 40px; }
-    .content iframe, .content hr { margin-bottom: 40px; }
-    .subtitle { margin-bottom: 40px; }
-    .community { margin: 40px; }
-    .badge img { width: 400px;}
-  }
+    @media only screen and (min-height : 500px) {
+      h1 {
+        font-size: 40px;
+      }
 
-    </style>
-  </head>
-  <body>
-    <a href="https://github.com/wcgen/wcgen" class="github-corner" aria-label="View source on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#673AB7; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <section id="bottom-section" class="bottom-section color-c">
-      <header>
-        <h1 class="title" id="install"><a name="rel_pos_size">wepback wizard</a></h1>
-        <h2 class="subtitle">generate a webpack.config.js in seconds</h2>
-      </header>
-      <div id="install" class="content">
-        <div class="step">
-        </div>
-        <pre class="code"><span class="lightblue">npm</span> install -g <span class="gold">wpzrd</span></pre>
+      #top-home-image {
+        height: 250px;
+      }
+
+      #top-title {
+        padding-bottom: 15px;
+        font-size: 65px;
+        margin-top: -80px;
+      }
+
+      #top-title img {
+        width: 450px;
+      }
+
+      #top-subtitle {
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 30px;
+      }
+
+      .top-button {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 0 0 70px 0;
+      }
+
+      #bottom-section {
+        background-size: 225px;
+      }
+
+      #bottom-section,
+      .review-section {
+        padding: 60px 0;
+      }
+
+      #middle-section {
+        padding: 30px 0;
+      }
+
+      #middle-section h1 {
+        padding: 35px 0 15px 0;
+      }
+
+      #middle-section h3 {
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+      pre {
+        font-size: 16px;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 600px;
+      }
+
+      .content p {
+        margin-top: 25px;
+      }
+
+      .content iframe,
+      .content hr {
+        margin-bottom: 25px;
+      }
+
+      iframe {
+        width: 600px;
+      }
+
+      .title {
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        margin-bottom: 30px;
+      }
+
+      .community {
+        margin: 30px;
+      }
+
+      .badge img {
+        width: 300px;
+      }
+    }
+
+    @media only screen and (min-height : 750px) {
+      button {
+        border: 5px solid;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      #top-home-image {
+        height: 350px;
+        width: 300px;
+      }
+
+      #top-title {
+        padding-bottom: 30px;
+        font-size: 84.5px;
+        margin-top: -80px;
+      }
+
+      #top-title img {
+        width: 650px;
+      }
+
+      #top-subtitle {
+        font-size: 24px;
+        line-height: 36px;
+        padding-bottom: 30px;
+      }
+
+      .top-button {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 0 0 100px 0;
+      }
+
+      #bottom-section {
+        background-size: 300px;
+        background-position: 20px 40px;
+      }
+
+      #bottom-section,
+      .review-section {
+        padding: 100px 0;
+      }
+
+      #middle-section {
+        padding: 50px 0;
+      }
+
+      #middle-section h1 {
+        padding: 50px 0 20px 0;
+      }
+
+      #middle-section h3 {
+        padding: 30px 0;
+        font-size: 45px;
+      }
+
+      .content {
+        font-size: 20px;
+        line-height: 30px;
+        max-width: 720px;
+      }
+
+      iframe {
+        width: 720px;
+      }
+
+      pre {
+        font-size: 20px;
+      }
+
+      .content p {
+        margin-top: 40px;
+      }
+
+      .content iframe,
+      .content hr {
+        margin-bottom: 40px;
+      }
+
+      .subtitle {
+        margin-bottom: 40px;
+      }
+
+      .community {
+        margin: 40px;
+      }
+
+      .badge img {
+        width: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://github.com/wcgen/wcgen" class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+      style="fill:#673AB7; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path
+        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+      <path
+        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+        fill="currentColor" class="octo-body"></path>
+    </svg></a>
+  <style>
+    .github-corner:hover .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+
+    @keyframes octocat-wave {
+
+      0%,
+      100% {
+        transform: rotate(0)
+      }
+
+      20%,
+      60% {
+        transform: rotate(-25deg)
+      }
+
+      40%,
+      80% {
+        transform: rotate(10deg)
+      }
+    }
+
+    @media (max-width:500px) {
+      .github-corner:hover .octo-arm {
+        animation: none
+      }
+
+      .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+    }
+  </style>
+  <section id="bottom-section" class="bottom-section color-c">
+    <header>
+      <h1 class="title" id="install"><a name="rel_pos_size">wepback wizard</a></h1>
+      <h2 class="subtitle">generate a webpack.config.js in seconds</h2>
+    </header>
+    <div id="install" class="content">
+      <div class="step">
       </div>
-    </section>
-<section id="middle-section" class="middle-section color-b">
-      <header>
-         <h1 class="title"><a name="rel_pos_size">No More Tears</a></h1>
-         <h2 class="subtitle">Creating a webpack.config.js</h2>
-      </header>
-      <div class="content">
-        <p>Modern javascript apps often require <span class="blue">node_modules</span> which in turn require a bundler. Webpack is by far the most popular—it creates a single <span class="blue">bundle.js</span> in your index file in seconds, offering hot-module reloading and a variety of plugins from the webpack ecosystem. Painless.</p> 
-        <p>Not so painless: generating a webpack.config.js. In <a href="#">a recent poll</a>, developers aid it often takes 10-20 <em>years</em> to properly configure. Webpack wizard reduces that to mere seconds.
-    </section>
-    <section>
-      <img src="demo.gif" />
-    </section>
-  </body>
+      <pre class="code"><span class="lightblue">npm</span> install -g <span class="gold">wpzrd</span></pre>
+    </div>
+  </section>
+  <section id="middle-section" class="middle-section color-b">
+    <header>
+      <h1 class="title"><a name="rel_pos_size">No More Tears</a></h1>
+      <h2 class="subtitle">Creating a webpack.config.js</h2>
+    </header>
+    <div class="content">
+      <p>Modern javascript apps often require <span class="blue">node_modules</span> which in turn require a bundler.
+        Webpack is by far the most popular—it creates a single <span class="blue">bundle.js</span> in your index file in
+        seconds, offering hot-module reloading and a variety of plugins from the webpack ecosystem. Painless.</p>
+      <p>Not so painless: generating a webpack.config.js. In <a href="#">a recent poll</a>, developers aid it often
+        takes 10-20 <em>years</em> to properly configure. Webpack wizard reduces that to mere seconds.
+  </section>
+  <section>
+    <img style="display:block; margin-left: auto; margin-right: auto;" src="demo.gif" />
+  </section>
+</body>
+
 </html>
