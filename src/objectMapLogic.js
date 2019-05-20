@@ -6,7 +6,7 @@ const generateWebpackConfig = {}
 
 generateWebpackConfig.make = (answers) => {
   // console.log('moduleConfig', moduleConfig[answers[0]])
-//  console.log('answers', answers)
+  //  console.log('answers', answers)
 
   const sample = {
     entry: './src/index.js',
@@ -33,6 +33,16 @@ generateWebpackConfig.make = (answers) => {
           '.jsx'
         ]
       }
+      // generate a babelrc file
+      fs.writeFile(
+        '.babelrc',
+        `{
+  presets: [“@babel/preset-env”, “@babel/preset-react”]
+}`,
+        err => {
+          if (err) throw err;
+        })
+
     }
 
   });
@@ -41,8 +51,8 @@ generateWebpackConfig.make = (answers) => {
 
   fs.writeFile('webpack.config.js', `const path = require('path'); 
   module.exports = `, err => {
-    if (err) throw err;
-  });
+      if (err) throw err;
+    });
 
   fs.appendFile(
     'webpack.config.js',
