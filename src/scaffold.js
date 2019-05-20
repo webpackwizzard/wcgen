@@ -2,10 +2,15 @@
 
 const inquirer = require('inquirer');
 const opts = require('./opts')
+const generateWebpackConfig = require('../src/objectMapLogic')
 
-setTimeout(() => {
+const scaffold = {}
+
+scaffold.beginPrompting = () => {
   inquirer.prompt(opts)
     .then(answers => {
-      console.log(Object.values(answers))
-    });
-}, 1000)
+      generateWebpackConfig.make(Object.values(answers))
+    })
+}
+
+module.exports = scaffold
