@@ -2,6 +2,26 @@
 
 Easy to use command line Webpabck configuration generator.
 
+```
+
+                 .
+
+                   .
+         /^\     .
+    /\   "V"
+   /__\   I      O  o
+  //..\\  I     .
+  \].`[/  I
+  /l\/j\  (]    .  O
+ /. ~~ ,\/I          .
+ \\L__j^\/I       o
+  \/--v}  I     o   .
+  |    |  I   _________
+  |    |  I c(`       ')o
+  |    l  I   \.     ,/
+_/j  L l\_!  _//^---^\\_ 
+
+```
 I remember the good old days. Creating a new web app was simple. All you needed to do was to create an HTML file, add jQuery and your source code with a `<script>` tag and you were good to go.
 
 Today it's different.
