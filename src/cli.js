@@ -7,7 +7,7 @@ const scaffold = require('./scaffold');
 const cliScaffold = {}
 
 cliScaffold.init = () => {
-  console.log(chalk.yellow(figlet.textSync('WebPackWizard', { horizontalLayout: 'full' })));
+  console.log(chalk.yellow(figlet.textSync('WebPackWizard', { horizontalLayout: 'full',font: 'Ghost', })));
   console.log("")
   console.log(chalk.magenta('Pink Fairy Armadillos'));
   scaffold.beginPrompting()
