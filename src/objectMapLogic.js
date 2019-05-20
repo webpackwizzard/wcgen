@@ -60,8 +60,6 @@ generateWebpackConfig.make = (answers) => {
       if (err) throw err;
     }
   );
-
-
   const Progress = CLI.Progress;
   const thisPercentBar = new Progress(20);
   let percent = 0;
