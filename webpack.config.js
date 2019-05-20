@@ -1,17 +1,28 @@
-module.exports = {
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, 'dist'),
+const path = require('path'); 
+  module.exports =  path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
   },
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react"
+            ]
+          }
+        }
+      },
+      {
+        test: /\.less$/,
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader"
+          "less-loader"
         ]
       },
       {
@@ -28,7 +39,22 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          "file-loader"
+        ]
       }
     ]
+  },
+  resolve: {
+    extensions: [
+      ".js",
+      ".jsx"
+    ]
+  },
+  devServer: {
+    contentBase: "./dist"
   }
 }
