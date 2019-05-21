@@ -64,5 +64,4 @@ scaffold.beginPrompting = () => {
   });
 };
 
-// scaffold.beginPrompting();
 module.exports = scaffold;
