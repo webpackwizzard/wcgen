@@ -54,12 +54,12 @@ generateWebpackConfig.make = (answers) => {
   fs.appendFile(
     'webpack.config.js',
     JSON.stringify(sample, null, 2)
-      .replace(/(?:\/\.)/g, '\/\\.')
-      .replace(/"CODE:/g, '')
-      .replace(/\)"/g, ')')
+      .replace(/(?:\/\.)/g, '\/\\.')// magic that escapes the regex .\
+      .replace(/"CODE:/g, '') // how we keep track of which quote to remove
+      .replace(/\)"/g, ')') // closing of the Path dir with a  )
       .replace(/\!"/g, '')
       .replace(/"!/g, '')
-      .replace(/"\w+"(?=:)/g, val => val.replace(/"/g, '')),
+      .replace(/"\w+"(?=:)/g, val => val.replace(/"/g, '')), // grabs all keys and remove Quotes
     (err) => {
       if (err) throw err;
     },
