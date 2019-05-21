@@ -29,12 +29,17 @@ const path = require('path');
         ]
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "ts-loader",
+          loader: [
+            "babel-loader",
+            "jshint-loader"
+          ],
           options: {
-            transpileOnly: true
+            presets: [
+              "env"
+            ]
           }
         }
       },

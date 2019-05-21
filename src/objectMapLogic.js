@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const chalk = require('chalk');
-const generateWebpackConfig = {}
+
+const generateWebpackConfig = {};
 
 generateWebpackConfig.make = (answers) => {
   // console.log('moduleConfig', moduleConfig[answers[0]])
@@ -13,46 +14,42 @@ generateWebpackConfig.make = (answers) => {
     entry: './src/index.js',
     output: {
       path: "CODE:path.resolve(__dirname, 'dist')",
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
-    module: {}
+    module: {},
   };
 
   sample.module.rules = [];
 
-  answers.forEach(element => {
+  answers.forEach((element) => {
     if (moduleConfig[element]) sample.module.rules.push(moduleConfig[element]);
     if (element === 'React Hot Loader') {
       sample.devServer = {
-        contentBase: './dist'
-      }
+        contentBase: './dist',
+      };
     }
     if (element === 'React') {
       sample.resolve = {
         extensions: [
           '.js',
-          '.jsx'
-        ]
-      }
+          '.jsx',
+        ],
+      };
       // generate a babelrc file
-      fs.writeFile(
-        '.babelrc',
+      fs.writeFile('.babelrc',
         `{
-  presets: [“@babel/preset-env”, “@babel/preset-react”]
-}`,
-        err => {
+         presets: [“@babel/preset-env”, “@babel/preset-react”]
+        }`,
+        (err) => {
           if (err) throw err;
-        })
-
+        });
     }
-
   });
 
-
   fs.writeFile('webpack.config.js', `const path = require('path'); 
-  module.exports = `, err => {
-      if (err) throw err;
-    });
+  module.exports = `, (err) => {
+    if (err) throw err;
+  });
 
   fs.appendFile(
     'webpack.config.js',
@@ -63,10 +60,10 @@ generateWebpackConfig.make = (answers) => {
       .replace(/\!"/g, '')
       .replace(/"!/g, '')
       .replace(/"\w+"(?=:)/g, val => val.replace(/"/g, '')),
-    err => {
+    (err) => {
       if (err) throw err;
-    }
+    },
   );
-}
+};
 
-module.exports = generateWebpackConfig
+module.exports = generateWebpackConfig;
