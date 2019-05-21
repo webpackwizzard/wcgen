@@ -54,7 +54,7 @@ scaffold.beginPrompting = () => {
           //console.log('elm',element)
           if(mapModulesToLoaders[element] === undefined) return
         const packages = mapModulesToLoaders[element];
-           console.log(packages);
+          // console.log(packages);
           packages.forEach(pkg => {
             if (!packagesToInstall.includes(pkg)) {
               if (pkg.includes('babel')) packagesToInstall.push('@babel/core');
