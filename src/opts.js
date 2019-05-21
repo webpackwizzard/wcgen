@@ -1,36 +1,37 @@
 const inquirer = require('inquirer');
-module.exports = options = [
+
+const options = [
   {
     type: 'list',
     message: 'Select Your Main Library',
     name: 'Libary',
-    choices: ['React', 'Vue']
+    choices: ['React', 'Vue'],
   },
   {
     type: 'list',
     message: 'Select CSS preprocessor',
     name: 'cssPreprocessor',
-    choices: ['SCSS', 'LESS', 'POSTCSS', 'Sylus']
+    choices: ['SCSS', 'LESS', 'POSTCSS', 'Sylus'],
   },
   {
     type: 'list',
     message: 'Select your transpiler',
     name: 'transpiler',
-    choices: ['Babel', 'TypeScript']
+    choices: ['Babel', 'TypeScript'],
   },
   {
     type: 'list',
     message: 'Will you have Images?',
     name: 'Images',
-    choices: ['Image', 'None']
+    choices: ['Image', 'None'],
   },
-  // commented out for testing package-installer
   {
     type: 'list',
     message: 'Will you need a server?',
     name: 'Server',
     choices: [
-      "React Hot Loader", "None",
-    ]
+      'React Hot Loader', 'None',
+    ],
   },
 ];
+module.exports = options;
