@@ -6,7 +6,7 @@ const btn = document.getElementById('myBtn');
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName('close')[0];
 
-// When the user clicks on the button, open the modal 
+// When the user clicks on the button, open the modal
 btn.onclick = () => {
   modal.style.display = 'block';
 };
