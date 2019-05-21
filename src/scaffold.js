@@ -11,8 +11,8 @@ const thisPercentBar = new CLI.Progress(20);
 const scaffold = {};
 
 const mapModulesToLoaders = {
-  Babel: ['babel-loader', '@babel/preset-env', 'jshint-loader'],
-  React: ['babel-loader', '@babel/preset-env', '@babel/preset-react'],
+  Babel: ['babel-loader', '@babel/preset-env', 'jshint-loader', 'webpack'],
+  React: ['babel-loader', '@babel/preset-env', '@babel/preset-react', 'webpack'],
   CoffeeScript: ['coffee-loader'],
   TypeScript: ['ts-loader'],
   Vue: ['vue-loader'],
