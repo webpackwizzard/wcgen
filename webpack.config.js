@@ -1,29 +1,45 @@
 const path = require('path'); 
-  module.exports =  path.resolve(__dirname, 'dist'),
+  module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
   },
   module: {
     rules: [
       {
-        test: /\.vue$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "vue-loader"
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react"
+            ]
+          }
+        }
       },
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader"
+          "less-loader"
         ]
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "ts-loader",
+          loader: [
+            "babel-loader",
+            "jshint-loader"
+          ],
           options: {
-            transpileOnly: true
+            presets: [
+              "env"
+            ]
           }
         }
       },
@@ -33,6 +49,12 @@ const path = require('path');
           "file-loader"
         ]
       }
+    ]
+  },
+  resolve: {
+    extensions: [
+      ".js",
+      ".jsx"
     ]
   },
   devServer: {
