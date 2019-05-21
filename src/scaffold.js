@@ -51,8 +51,10 @@ scaffold.beginPrompting = () => {
         status.stop();
         const packagesToInstall = ['webpack'];
         answersArray.forEach(element => {
-          const packages = mapModulesToLoaders[element];
-          // console.log(packages);
+          //console.log('elm',element)
+          if(mapModulesToLoaders[element] === undefined) return
+        const packages = mapModulesToLoaders[element];
+           console.log(packages);
           packages.forEach(pkg => {
             if (!packagesToInstall.includes(pkg)) {
               if (pkg.includes('babel')) packagesToInstall.push('@babel/core');
@@ -66,8 +68,6 @@ scaffold.beginPrompting = () => {
         });
       }
     }, 60);
-
-
 
   });
 };

@@ -1,5 +1,8 @@
 const path = require('path'); 
-  module.exports =  path.resolve(__dirname, 'dist'),
+  module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
   },
   module: {
@@ -18,25 +21,12 @@ const path = require('path');
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader"
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
         use: {
-          loader: [
-            "babel-loader",
-            "jshint-loader"
-          ],
+          loader: "ts-loader",
           options: {
-            presets: [
-              "env"
-            ]
+            transpileOnly: true
           }
         }
       },
@@ -53,5 +43,8 @@ const path = require('path');
       ".js",
       ".jsx"
     ]
+  },
+  devServer: {
+    contentBase: "./dist"
   }
 }

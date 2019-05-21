@@ -23,14 +23,14 @@ module.exports = options = [
     message: 'Will you have Images?',
     name: 'Images',
     choices: ['Image', 'None']
-  }
+  },
   // commented out for testing package-installer
-  // {
-  //   type: 'list',
-  //   message: 'Will you need a server?',
-  //   name: 'Server',
-  //   choices: [
-  //     "React Hot Loader", "None",
-  //   ]
-  // },
+  {
+    type: 'list',
+    message: 'Will you need a server?',
+    name: 'Server',
+    choices: [
+      "React Hot Loader", "None",
+    ]
+  },
 ];
