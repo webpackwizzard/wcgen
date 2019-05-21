@@ -7,7 +7,6 @@ const moduleConfig = require('./moduleLoadersConfig');
 const generateWebpackConfig = {};
 
 generateWebpackConfig.make = (answers) => {
-  
   const sample = {
     entry: './src/index.js',
     output: {
