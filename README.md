@@ -1,6 +1,6 @@
 # [Web Pack conifg Generator](https://webpackwizzard.github.io/wcgen/)
 
-Easy to use command line Webpabck configuration generator.
+Easy to use command line Web pack configuration generator.
 
 ```
 
